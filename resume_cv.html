@@ -1,0 +1,81 @@
+<!--
+Program: index.html
+Author:  Jack Rogerson
+Date:	 10/27/2020
+Updated: 10/27/2020
+-->
+
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <title>Home</title>
+    </head>
+
+    <body onload="onload">
+
+	    <div id="myNav" class="overlay">
+		    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		    <div class="overlay-content">
+			    <a href="index.html">Home - Jack Rogerson</a>
+			    <a href="technology_works.html">Technology Works</a>
+			    <a href="resume_cv.html">Resume & CV</a>
+		    </div>
+		</div>
+
+		<span onclick="openNav()"><img src="images/homeButton.png" id="navbutton"></img></span>
+
+
+	    <script>
+
+		function openNav() {
+		  document.getElementById("myNav").style.height = "100%";
+		}
+
+		function closeNav() {
+		  document.getElementById("myNav").style.height = "0%";
+		}
+
+        </script>
+
+	    <div class="background-wrap">
+
+		    <video id="video-bg-elem" preload="auto" autoplay="true" loop="loop" muted="muted">
+
+			    <source src="images/vid1.mp4" type="video/mp4">
+				Video not supported
+
+			</video>
+
+			<!-- Container at top of page -->
+			<div class="headerBox">
+
+			    <p id="pageName">RESUME/CV</p>
+
+			</div>
+
+      <!-- This is the website title -->
+			<p class="deepshadow">Jack Rogerson Portfolio</p>
+
+			<!-- resume PDF -->
+			<object data="images/Rogerson-Jack_Resume.pdf" id="resume"></object>
+
+			<!-- This is my PDF -->
+			<object data="images/technology_works.pdf" id="resume1"></object>
+
+      <!-- Footer on bottom of page -->
+      <p id="time">&nbsp; &copy; &nbsp; Jack Rogerson &nbsp; &nbsp; <a href="mailto:jrogerson@clarku.edu"><u>Click here to email me!</u></a></p>
+
+			<!-- Learned this concept from w3schools -->
+			<script>
+
+			document.getElementById("time").innerHTML = Date() + document.getElementById("time").innerHTML;
+
+			</script>
+
+    </body>
+
+
+</html>

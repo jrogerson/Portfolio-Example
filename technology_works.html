@@ -1,0 +1,203 @@
+<!--
+Program: index.html
+Author:  Jack Rogerson
+Date:	 10/27/2020
+Updated: 10/27/2020
+-->
+
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <title>Technology Works</title>
+    </head>
+
+    <body onload="onload()">
+
+	    <div id="myNav" class="overlay">
+		    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		    <div class="overlay-content">
+          <a href="index.html">Home - Jack Rogerson</a>
+			    <a href="technology_works.html">Technology Works</a>
+			    <a href="resume_cv.html">Resume & CV</a>
+		    </div>
+		</div>
+
+		<span onclick="openNav()"><img src="images/homeButton.png" id="navbutton"></img></span>
+
+	    <div class="background-wrap">
+
+		    <video id="video-bg-elem" preload="auto" autoplay="true" loop="loop" muted="muted">
+
+			    <source src="images/vid1.mp4" type="video/mp4">
+				Video not supported
+
+			</video>
+
+			<!-- Container at top of page -->
+			<div class="headerBox">
+
+			    <p id="pageName">Tech Work</p>
+
+			</div>
+
+			<!-- This is the title -->
+      <p class="deepshadow">Jack Rogerson Portfolio</p>
+
+			<!-- Displays the heading of Professional on artifacts page -->
+			<h1 id="prohead"><u>Professional Artifacts</u></h1>
+
+			<!-- Modal concept from w3schools. -->
+
+			<!-- Initiates a table containing the Modal images of artifacts both personal and professional with their descriptive captions of text -->
+			<table id="table">
+
+				<tr>
+
+					<td id="tw1">
+
+						<!-- Modal image 1 -->
+						<img id="myImg1" src="images/technology_work_1.png" alt="I have created an internet throughput and ping tracking utility that uses a python script run as a
+cron job to invoke a third-party speed test utility. This data is then stored in a database and
+visualized using Grafana." width="300" height="200">
+
+					</td>
+
+					<td id="tw2">
+
+						<!-- Modal image 2 -->
+						<img id="myImg2" src="images/technology_work_2.png" alt="I have designed multiple Ubiquiti Unifi network controllers in a variety of environments including virtualized (Ubuntu Server) and physical Raspbian implementations. Controllers allow
+visualization of network statistics such as connected clients and throughput. The Unifi controllers feature a Guest access webpage that I have made modifications to. " width="300" height="200">
+
+					</td>
+
+					<td id="tw3">
+
+						<!-- Modal image 3 -->
+						<img id="myImg3" src="images/technology_work_3.png" alt="I have designed specialty networking solutions for CT schools for outdoor livestreaming
+capabilities. The solutions are designed to be minimally intrusive and allow quick on the go
+setup. See an example diagram above." width="300" height="200">
+
+					</td>
+
+				</tr>
+
+				<!-- Displays the heading of Personal on artifacts page -->
+				<h1 id="perhead"><u> </u></h1>
+
+				<tr>
+
+					<td id="tw4">
+
+						<!-- Modal image 4 -->
+						<img id="myImg4" src="images/technology_work_4.png" alt="Owner/Operator. Developed and ran a successful business streaming sporting, BOE, & Community events." width="300" height="200">
+
+					</td>
+
+					<td id="tw5">
+
+						<!-- Modal image 5 -->
+						<img id="myImg5" src="images/technology_work_5.png" alt="Technology Coordinator, Sound and lighting design for Hale-Ray music events, Community theatre, and
+BOE presentations." width="300" height="200">
+
+					</td>
+
+					<td id="tw6">
+
+						<!-- Modal image 6 -->
+						<img id="myImg6" src="images/technology_work_6.png" alt="Ubiquiti AirView radio frequency and spectrum analyzer experience." width="300" height="200">
+
+					</td>
+
+				</tr>
+
+			</table>
+
+			<!-- The Modal set-up (initiation) -->
+			<div id="myModal" class="modal">
+
+			  <!-- Displays the "X" icon to close the Modal -->
+			  <span class="close">&times;</span>
+
+			  <!-- Displays the images in the modal table set up -->
+			  <img class="modal-content" id="img01">
+
+			  <!-- Displays the caption of text under the artifact image -->
+			  <div id="caption"></div>
+
+			</div>
+
+			<script>
+
+			function openNav() {
+		        document.getElementById("myNav").style.height = "100%";
+		    }
+
+			function closeNav() {
+			  document.getElementById("myNav").style.height = "0%";
+			}
+
+			function test(id)
+			{
+
+				// Get the image modal - use its "alt" text as a caption
+				var img = document.getElementById(id);
+
+				img.onclick = function(){
+					modal.style.display = "block";
+					modalImg.src = this.src;
+					captionText.innerHTML = this.alt;
+				}
+
+			}
+
+			// Get the modal
+			var modal = document.getElementById('myModal');
+
+			// Grabs the image clicked and executes Modal feature
+			var modalImg = document.getElementById("img01");
+
+			// Displays the caption of text under the image
+			var captionText = document.getElementById("caption");
+
+			// Get the <span> element that closes the modal
+			var span = document.getElementsByClassName("close")[0];
+
+			// When the user clicks on <span> (x), close the modal
+			span.onclick = function() {
+				modal.style.display = "none";
+			}
+
+			// Implementation of the test function when page loads, each artifact image modal executes
+			function onload()
+			{
+				test("myImg1");
+				test("myImg2");
+				test("myImg3");
+				test("myImg4");
+				test("myImg5");
+				test("myImg6");
+			}
+
+			</script>
+
+			<!-- Footer on bottom of page -->
+      <p id="time">&nbsp; &copy; &nbsp; Jack Rogerson &nbsp; &nbsp; <a href="mailto:jrogerson@clarku.edu"><u>Click here to email me!</u></a></p>
+
+			<!-- Learned this concept from w3schools -->
+			<script>
+
+			// Sets the Date function in JavaScript to the id of time
+			document.getElementById("time").innerHTML = Date() +
+			document.getElementById("time").innerHTML;
+
+			</script>
+
+
+
+    </body>
+
+
+</html>
